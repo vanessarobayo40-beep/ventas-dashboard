@@ -196,7 +196,7 @@
 
     /* ── INSTALL BUTTON ── */
     .btn-install {
-      display:none; align-items:center; gap:7px;
+      display:flex; align-items:center; gap:7px;
       background:linear-gradient(135deg,#6366f1,#22d3ee);
       border:none; border-radius:20px; padding:7px 16px;
       font-size:.75rem; font-weight:600; color:#fff;
@@ -231,7 +231,7 @@
   <div class="topbar-right">
     <button id="btn-install" class="btn-install">⬇ Instalar App</button>
     <span class="badge-period">Febrero – Mayo 2026</span>
-    <span class="badge-updated">● Actualizado 24 May 2026, 15:41</span>
+    <span class="badge-updated">● Actualizado 24 May 2026, 15:44</span>
   </div>
 </div>
 
@@ -540,27 +540,31 @@
   // ── Install button ───────────────────────────────────
   (function() {
     const btn = document.getElementById('btn-install');
-    if (window.matchMedia('(display-mode: standalone)').matches) return;
-    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
-    if (isIOS) {
-      btn.style.display = 'flex';
-      btn.addEventListener('click', () => {
-        alert('Para instalar en iPhone:
-1. Toca el botón ⬆ compartir (abajo en Safari)
-2. Selecciona "Añadir a pantalla de inicio"
-3. Toca Agregar');
-      });
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      btn.style.display = 'none';
+      return;
     }
+    btn.style.display = 'flex';
+    let deferredPrompt = null;
     window.addEventListener('beforeinstallprompt', e => {
       e.preventDefault();
-      let prompt = e;
-      btn.style.display = 'flex';
-      btn.addEventListener('click', async () => {
-        prompt.prompt();
-        const { outcome } = await prompt.userChoice;
+      deferredPrompt = e;
+    });
+    btn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') btn.style.display = 'none';
-        prompt = null;
-      });
+        deferredPrompt = null;
+      } else if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+        alert('Para instalar en iPhone:
+1. Toca ⬆ compartir (abajo)
+2. "Añadir a pantalla de inicio"
+3. Toca Agregar');
+      } else {
+        alert('Para instalar:
+Toca los ⋮ tres puntos del navegador → "Instalar app" o "Agregar a pantalla de inicio"');
+      }
     });
   })();
 
