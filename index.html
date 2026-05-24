@@ -7,6 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#07101f"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Ventas"/>
+  <link rel="apple-touch-icon" href="icon-192.png"/>
   <style>
     :root {
       --bg:      #07101f;
@@ -211,7 +218,7 @@
   </div>
   <div class="topbar-right">
     <span class="badge-period">Febrero – Mayo 2026</span>
-    <span class="badge-updated">● Actualizado 19 May 2026, 18:31</span>
+    <span class="badge-updated">● Actualizado 24 May 2026, 15:22</span>
   </div>
 </div>
 
@@ -221,18 +228,18 @@
   <div class="kpi-card" style="--accent-color:#22d3ee">
     <div class="kpi-top">
       <div class="kpi-icon-box" style="background:#22d3ee22;color:#22d3ee">💰</div>
-      <span class="trend trend-down">▼ -63.4%</span>
+      <span class="trend trend-down">▼ -42.1%</span>
     </div>
-    <span class="kpi-val" data-val="19305450">$19.305.450</span>
+    <span class="kpi-val" data-val="20638950">$20.638.950</span>
     <div class="kpi-label">Total Ventas</div>
   </div>
 
   <div class="kpi-card" style="--accent-color:#f43f5e">
     <div class="kpi-top">
       <div class="kpi-icon-box" style="background:#f43f5e22;color:#f43f5e">🧾</div>
-      <span class="trend trend-down">▼ -48.7%</span>
+      <span class="trend trend-down">▼ -12.3%</span>
     </div>
-    <span class="kpi-val" data-val="3436850">$3.436.850</span>
+    <span class="kpi-val" data-val="3841350">$3.841.350</span>
     <div class="kpi-label">Total Gastos</div>
   </div>
 
@@ -249,7 +256,7 @@
     <div class="kpi-top">
       <div class="kpi-icon-box" style="background:#10b98122;color:#10b981">📈</div>
     </div>
-    <span class="kpi-val" data-val="12169600" style="color:#10b981">$12.169.600</span>
+    <span class="kpi-val" data-val="13098600" style="color:#10b981">$13.098.600</span>
     <div class="kpi-label">Ganancia Neta</div>
   </div>
 
@@ -287,8 +294,8 @@
       <canvas id="donutChart" height="190"></canvas>
       <div class="donut-center">
         <span class="dc-label">Ganancia</span>
-        <span class="dc-val">$12.169.600</span>
-        <span class="dc-pct">63.0% margen</span>
+        <span class="dc-val">$13.098.600</span>
+        <span class="dc-pct">63.5% margen</span>
       </div>
     </div>
   </div>
@@ -356,26 +363,26 @@
         </tr>
         <tr>
           <td class="mes-cell">Mayo
-            <div class="bar-wrap"><div class="bar-fill" style="width:36%"></div></div>
+            <div class="bar-wrap"><div class="bar-fill" style="width:57%"></div></div>
           </td>
-          <td class="num cyan">$2.288.800</td>
-          <td class="num rose">$570.300</td>
+          <td class="num cyan">$3.622.300</td>
+          <td class="num rose">$974.800</td>
           <td class="num violet">$260.000</td>
-          <td class="num" style="color:#10b981">$1.458.500</td>
+          <td class="num" style="color:#10b981">$2.387.500</td>
           <td class="num">
-            <span class="pill" style="background:#10b98122;color:#10b981">63.7%</span>
+            <span class="pill" style="background:#10b98122;color:#10b981">65.9%</span>
           </td>
           
         </tr></tbody>
       <tfoot>
         <tr>
           <td>Total acumulado</td>
-          <td class="num cyan">$19.305.450</td>
-          <td class="num rose">$3.436.850</td>
+          <td class="num cyan">$20.638.950</td>
+          <td class="num rose">$3.841.350</td>
           <td class="num violet">$3.699.000</td>
-          <td class="num" style="color:#10b981">$12.169.600</td>
+          <td class="num" style="color:#10b981">$13.098.600</td>
           <td class="num">
-            <span class="pill" style="background:#10b98122;color:#10b981">63.0%</span>
+            <span class="pill" style="background:#10b98122;color:#10b981">63.5%</span>
           </td>
           
         </tr>
@@ -386,11 +393,11 @@
 
 <script>
   const labels   = ["Febrero", "Marzo", "Abril", "Mayo"];
-  const ventas   = [5267000.0, 5488850.0, 6260800.0, 2288800.0];
-  const gastos   = [858000.0, 896850.0, 1111700.0, 570300.0];
+  const ventas   = [5267000.0, 5488850.0, 6260800.0, 3622300.0];
+  const gastos   = [858000.0, 896850.0, 1111700.0, 974800.0];
   const invers   = [995500.0, 1022000.0, 1421500.0, 260000.0];
-  const ganancia = [3413500.0, 3570000.0, 3727600.0, 1458500.0];
-  const totV = 19305450.0, totN = 12169600.0;
+  const ganancia = [3413500.0, 3570000.0, 3727600.0, 2387500.0];
+  const totV = 20638950.0, totN = 13098600.0;
 
   const fmt = n => '$' + Math.abs(n).toLocaleString('es-CO');
 
@@ -490,7 +497,7 @@
     data: {
       labels: ['Ganancia neta', 'Gastos', 'Inversión'],
       datasets: [{
-        data: [totN, 3436850.0, 3699000.0],
+        data: [totN, 3841350.0, 3699000.0],
         backgroundColor: ['#10b98128','#f43f5e28','#a78bfa28'],
         borderColor:     ['#10b981',  '#f43f5e',  '#a78bfa'],
         borderWidth: 2,
@@ -516,6 +523,10 @@
       }
     }
   });
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  }
 </script>
 </body>
 </html>
