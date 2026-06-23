@@ -292,7 +292,7 @@
   <div class="topbar-right">
     <button id="btn-install" class="btn-install">⬇ Instalar App</button>
     <span class="badge-period">Febrero – Junio 2026</span>
-    <span class="badge-updated">● Actualizado 23 Jun 2026, 18:19</span>
+    <span class="badge-updated">● Actualizado 23 Jun 2026, 18:21</span>
   </div>
 </div>
 
@@ -313,7 +313,7 @@
       <div class="kpi-icon-box" style="background:#f43f5e22;color:#f43f5e">🧾</div>
       <span class="trend trend-down">▼ -16.0%</span>
     </div>
-    <span class="kpi-val" data-val="16446850">$16.446.850</span>
+    <span class="kpi-val" data-val="19446850">$19.446.850</span>
     <div class="kpi-label">Total Gastos</div>
   </div>
 
@@ -330,7 +330,7 @@
     <div class="kpi-top">
       <div class="kpi-icon-box" style="background:#10b98122;color:#10b981">📈</div>
     </div>
-    <span class="kpi-val" data-val="5541100" style="color:#10b981">$5.541.100</span>
+    <span class="kpi-val" data-val="2541100" style="color:#10b981">$2.541.100</span>
     <div class="kpi-label">Ganancia Neta</div>
   </div>
 
@@ -368,8 +368,8 @@
       <canvas id="donutChart" height="190"></canvas>
       <div class="donut-center">
         <span class="dc-label">Ganancia</span>
-        <span class="dc-val">$5.541.100</span>
-        <span class="dc-pct">20.8% margen</span>
+        <span class="dc-val">$2.541.100</span>
+        <span class="dc-pct">9.5% margen</span>
       </div>
     </div>
   </div>
@@ -414,11 +414,11 @@
             <div class="bar-wrap"><div class="bar-fill" style="width:87%"></div></div>
           </td>
           <td class="num cyan">$5.488.850</td>
-          <td class="num rose">$896.850</td>
+          <td class="num rose">$3.896.850</td>
           <td class="num violet">$1.022.000</td>
-          <td class="num" style="color:#10b981">$3.570.000</td>
+          <td class="num" style="color:#10b981">$570.000</td>
           <td class="num">
-            <span class="pill" style="background:#10b98122;color:#10b981">65.0%</span>
+            <span class="pill" style="background:#10b98122;color:#10b981">10.4%</span>
           </td>
           
         </tr>
@@ -465,11 +465,11 @@
         <tr>
           <td>Total acumulado</td>
           <td class="num cyan">$26.633.950</td>
-          <td class="num rose">$16.446.850</td>
+          <td class="num rose">$19.446.850</td>
           <td class="num violet">$4.646.000</td>
-          <td class="num" style="color:#10b981">$5.541.100</td>
+          <td class="num" style="color:#10b981">$2.541.100</td>
           <td class="num">
-            <span class="pill" style="background:#10b98122;color:#10b981">20.8%</span>
+            <span class="pill" style="background:#10b98122;color:#10b981">9.5%</span>
           </td>
           
         </tr>
@@ -481,10 +481,10 @@
 <script>
   const labels   = ["Febrero", "Marzo", "Abril", "Mayo", "Junio"];
   const ventas   = [5267000.0, 5488850.0, 6260800.0, 4989300.0, 4628000.0];
-  const gastos   = [3858000.0, 896850.0, 4111700.0, 4119800.0, 3460500.0];
+  const gastos   = [3858000.0, 3896850.0, 4111700.0, 4119800.0, 3460500.0];
   const invers   = [995500.0, 1022000.0, 1421500.0, 260000.0, 947000.0];
-  const ganancia = [413500.0, 3570000.0, 727600.0, 609500.0, 220500.0];
-  const totV = 26633950.0, totN = 5541100.0;
+  const ganancia = [413500.0, 570000.0, 727600.0, 609500.0, 220500.0];
+  const totV = 26633950.0, totN = 2541100.0;
 
   const fmt = n => '$' + Math.abs(n).toLocaleString('es-CO');
 
@@ -584,7 +584,7 @@
     data: {
       labels: ['Ganancia neta', 'Gastos', 'Inversión'],
       datasets: [{
-        data: [totN, 16446850.0, 4646000.0],
+        data: [totN, 19446850.0, 4646000.0],
         backgroundColor: ['#10b98128','#f43f5e28','#a78bfa28'],
         borderColor:     ['#10b981',  '#f43f5e',  '#a78bfa'],
         borderWidth: 2,
